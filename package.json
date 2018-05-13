@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mnap00/mod-19.4-redux-reducers#readme",
   "dependencies": {
+    "redux": "^4.0.0",
     "uuid": "^3.2.1"
   }
 }
