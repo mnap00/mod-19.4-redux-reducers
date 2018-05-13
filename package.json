@@ -1,14 +1,14 @@
 {
-  "name": "mod-19.3-redux-actions",
-  "version": "0.3.0",
-  "description": "Redux - actions",
+  "name": "mod-19.4-redux-reducers",
+  "version": "0.4.0",
+  "description": "Redux - reducers",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mnap00/mod-19.3-redux-actions.git"
+    "url": "git+ssh://git@github.com/mnap00/mod-19.4-redux-reducers.git"
   },
   "keywords": [
     "redux"
@@ -16,9 +16,9 @@
   "author": "mnap00",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mnap00/mod-19.3-redux-actions/issues"
+    "url": "https://github.com/mnap00/mod-19.4-redux-reducers/issues"
   },
-  "homepage": "https://github.com/mnap00/mod-19.3-redux-actions#readme",
+  "homepage": "https://github.com/mnap00/mod-19.4-redux-reducers#readme",
   "dependencies": {
     "uuid": "^3.2.1"
   }
