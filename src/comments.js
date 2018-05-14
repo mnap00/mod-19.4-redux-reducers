@@ -16,48 +16,42 @@ function comments(state = [], action) {
             },
             ...state.comments];
         case EDIT_COMMENT:
-            return [
-                state.comments.filter(
-                    comment => comment.id !== action.id
-                ),
-                {
-                    id: action.id,
-                    text: action.text,
-                    votes: 0
+            return state.comments.map(comment => {
+                if (comment.id === action.id) {
+                    return Object.assign({}, comment, {
+                        id: comment.id,
+                        text: action.text,
+                        votes: comment.votes
+                    });
                 }
-            ];
+                return comment;
+            });
         case REMOVE_COMMENT:
-            return [
-                state.comments.filter(
-                    comment => comment.id !== action.id
-                )
-            ];
+            return state.comments.filter(
+                comment => comment.id !== action.id
+            );
         case THUMB_DOWN_COMMENT:
-            return [
-                state.comments.map((comment, id) => {
-                    if (id === action.id) {
-                        return Object.assign({}, comment, {
-                            id: comment.id,
-                            text: comment.text,
-                            votes: comment.votes - 1
-                        });
-                    }
-                    return comment;
-                })
-            ];
+            return state.comments.map(comment => {
+                if (comment.id === action.id) {
+                    return Object.assign({}, comment, {
+                        id: comment.id,
+                        text: comment.text,
+                        votes: comment.votes - 1
+                    });
+                }
+                return comment;
+            });
         case THUMB_UP_COMMENT:
-            return [
-                state.comments.map((comment, id) => {
-                    if (id === action.id) {
-                        return Object.assign({}, comment, {
-                            id: comment.id,
-                            text: comment.text,
-                            votes: comment.votes + 1
-                        });
-                    }
-                    return comment;
-                })
-            ];
+            return state.comments.map(comment => {
+                if (comment.id === action.id) {
+                    return Object.assign({}, comment, {
+                        id: comment.id,
+                        text: comment.text,
+                        votes: comment.votes + 1
+                    });
+                }
+                return comment;
+            });
         default:
             return state;
     }
